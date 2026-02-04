@@ -20,6 +20,10 @@
     "#routers": {
       "development": "./src/routers/index.ts",
       "default": "./dist/routers/index.js"
+    },
+    "#middleware": {
+      "development": "./src/middleware/index.ts",
+      "default": "./dist/middleware/index.js"
     }
   },
   "scripts": {
