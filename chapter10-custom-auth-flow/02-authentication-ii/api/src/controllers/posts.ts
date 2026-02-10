@@ -8,7 +8,7 @@ export const getAllPosts: RequestHandler = async (_req, res) => {
 };
 
 export const createPost: RequestHandler = async (req, res) => {
-  const newPost = await await Post.create(req.body);
+  const newPost = await Post.create(req.body);
   res.status(201).json(newPost);
 };
 
