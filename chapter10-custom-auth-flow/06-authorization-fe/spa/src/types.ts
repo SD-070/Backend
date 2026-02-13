@@ -23,5 +23,15 @@ declare global {
 		user: User | null;
 		handleSignIn: ({ email, password }: LoginInput) => Promise<void>;
 		handleSignOut: () => Promise<void>;
+		handleRegister: (formData: RegisterFormState) => Promise<void>;
 	};
+
+	type RegisterFormState = {
+		firstName: string;
+		lastName: string;
+		email: string;
+		password: string;
+		confirmPassword: string;
+	};
+	type SetPosts = React.Dispatch<React.SetStateAction<Post[]>>;
 }

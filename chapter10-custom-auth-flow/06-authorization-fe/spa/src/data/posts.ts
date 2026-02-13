@@ -35,10 +35,12 @@ export const getSinglePost = async (id: string): Promise<Post> => {
 export const createPost = async (
 	formData: Omit<Post, '_id'>
 ): Promise<Post> => {
+	const accessToken = localStorage.getItem('accessToken');
 	const res = await fetch(baseURL, {
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/json',
+			Authorization: `Bearer ${accessToken}`
 		},
 		body: JSON.stringify(formData)
 	});

@@ -48,4 +48,18 @@ const logout = async (): Promise<SuccessRes> => {
 	return data;
 };
 
-export { login, me, logout };
+const register = async (formData: RegisterFormState): Promise<TokenRes> => {
+	const res = await fetch(`${authServiceURL}/register`, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify(formData)
+	});
+
+	if (!res.ok) throw new Error(`${res.status}. Something went wrong!`);
+
+	const data = (await res.json()) as TokenRes;
+
+	return data;
+};
+
+export { login, me, logout, register };
