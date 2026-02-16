@@ -13,8 +13,7 @@ const messageSchema = new Schema({
 });
 
 const chatSchema = new Schema({
-  history: [messageSchema],
-  default: []
+  history: { type: [messageSchema], default: [] }
 });
 
 export default model('Chat', chatSchema);
