@@ -19,6 +19,14 @@
     "#schemas": {
       "development": "./src/schemas/index.ts",
       "default": "./dist/schemas/index.js"
+    },
+    "#db": {
+      "development": "./src/db/index.ts",
+      "default": "./dist/db/index.js"
+    },
+    "#models": {
+      "development": "./src/models/index.ts",
+      "default": "./dist/models/index.js"
     }
   },
   "scripts": {
@@ -31,6 +39,7 @@
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
+    "mongoose": "^9.2.1",
     "openai": "^6.21.0",
     "zod": "^4.3.6"
   },
