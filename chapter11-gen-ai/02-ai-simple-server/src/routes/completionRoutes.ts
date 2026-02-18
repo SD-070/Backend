@@ -1,9 +1,11 @@
 import { Router } from 'express';
-import { createChat, createInMemoryChat } from '#controllers';
+import { createChat, createInMemoryChat, getChatHistory } from '#controllers';
 import { validateBody } from '#middleware';
 import { promptSchema } from '#schemas';
 
 const completionRoutes = Router();
+
+completionRoutes.get('/history/:id', getChatHistory);
 
 completionRoutes.post('/in-memory-chat', validateBody(promptSchema), createInMemoryChat);
 
