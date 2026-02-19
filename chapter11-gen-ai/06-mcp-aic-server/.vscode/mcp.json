@@ -1,0 +1,10 @@
+{
+	"servers": {
+		"mcp-aic-server": {
+			"command": "node",
+			"args": [
+				"C:/Users/garre/Desktop/batch_repos/SD-070/Backend/chapter11-gen-ai/06-mcp-aic-server/dist/app.js"
+			]
+		}
+	}
+}
