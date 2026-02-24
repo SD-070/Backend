@@ -27,8 +27,16 @@ export const createInMemoryChat: RequestHandler<{}, CompletionDTO, PromptDTO> = 
     baseURL: process.env?.AI_URL
   });
 
-  messages.push({ role: 'user', content: prompt });
+  // const list = await client.models.list();
 
+  // for await (const model of list) {
+  //   console.log(model);
+  // }
+  // return;
+
+  messages.push({ role: 'user', content: prompt });
+  console.log(process.env.AI_MODEL + '\n\n');
+  // console.log(messages);
   const completion = await client.chat.completions.create({
     model: process.env.AI_MODEL || 'gemini-2.5-flash',
     messages
